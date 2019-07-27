@@ -1,0 +1,55 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap");
+.section {
+  font-size: 3em;
+  margin-top: 80px;
+  width: 100%;
+  max-width: 50rem;
+  color: #fff;
+  font-weight: 100;
+  margin-left: 100px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding-left: 20px;
+  float: left;
+}
+.section h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  font-family: "Open Sans Condensed", sans-serif;
+  line-height: 1.3em;
+  color: rgb(175, 119, 10);
+}
+.section p {
+  font-size: 30px;
+  line-height: 1.5em;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+img {
+  cursor: pointer;
+}
+.one {
+  margin-right: 30px;
+  margin-left: 60px;
+}
+.section:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.artisan {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #bb7f05;
+}
+
+/* mobile responsiveness */
+@media screen and (max-width: 700px) {
+  .section {
+    margin: 30px auto;
+    height: 50vh;
+    padding-top: 30px;
+  }
+  .section h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+}
