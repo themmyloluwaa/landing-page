@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import "../styles/JMText.css"
 import { Animated } from "react-animated-css"
+import google from "../images/google.png"
 
 const JMText = () => {
   return (
@@ -24,12 +25,13 @@ const JMText = () => {
               <Img fixed={data.one.childImageSharp.fixed} className="one" />
             )}
           />
-          <StaticQuery
+          <img src={google} alt="google play" className="two" />
+          {/* <StaticQuery
             query={query}
             render={data => (
               <Img fixed={data.two.childImageSharp.fixed} className="two" />
             )}
-          />
+          /> */}
         </Animated>
       </section>
     </Animated>
@@ -38,13 +40,6 @@ const JMText = () => {
 export const query = graphql`
   query {
     one: file(relativePath: { eq: "app store.png" }) {
-      childImageSharp {
-        fixed(width: 150, height: 150) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    two: file(relativePath: { eq: "google play.png" }) {
       childImageSharp {
         fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed
