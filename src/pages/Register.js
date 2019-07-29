@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import "../styles/Register.css"
 import Header from "../components/Header"
+import { Animated } from "react-animated-css"
 
 class Register extends Component {
   constructor() {
@@ -38,73 +39,74 @@ class Register extends Component {
     return (
       <div>
         <Header />
-
-        <section className="FormCenter">
-          <form onSubmit={this.handleSubmit} className="FormFields">
-            <article className="FormField">
-              <label className="FormField__Label" htmlFor="name">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="FormField__Input"
-                placeholder="Enter your full name"
-                name="name"
-                value={this.state.name}
-                onChange={this.handleChange}
-              />
-            </article>
-            <article className="FormField">
-              <label className="FormField__Label" htmlFor="password">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                className="FormField__Input"
-                placeholder="Enter your password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
-            </article>
-            <article className="FormField">
-              <label className="FormField__Label" htmlFor="email">
-                E-Mail Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="FormField__Input"
-                placeholder="Enter your email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-            </article>
-
-            <article className="FormField">
-              <label className="FormField__CheckboxLabel">
+        <Animated animationIn="zoomIn" animationInDelay={500} isVisible={true}>
+          <section className="FormCenter">
+            <form onSubmit={this.handleSubmit} className="FormFields">
+              <article className="FormField">
+                <label className="FormField__Label" htmlFor="name">
+                  Full Name
+                </label>
                 <input
-                  className="FormField__Checkbox"
-                  type="checkbox"
-                  name="hasAgreed"
-                  value={this.state.hasAgreed}
+                  type="text"
+                  id="name"
+                  className="FormField__Input"
+                  placeholder="Enter your full name"
+                  name="name"
+                  value={this.state.name}
                   onChange={this.handleChange}
-                />{" "}
-                I agree all statements in{" "}
-                <a href="www.google.com" className="FormField__TermsLink">
-                  terms of service
-                </a>
-              </label>
-            </article>
+                />
+              </article>
+              <article className="FormField">
+                <label className="FormField__Label" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  className="FormField__Input"
+                  placeholder="Enter your password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+              </article>
+              <article className="FormField">
+                <label className="FormField__Label" htmlFor="email">
+                  E-Mail Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="FormField__Input"
+                  placeholder="Enter your email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </article>
 
-            <article className="FormField">
-              <button className="FormField__Button mr-20">Sign Up</button>
-            </article>
-          </form>
-        </section>
+              <article className="FormField">
+                <label className="FormField__CheckboxLabel">
+                  <input
+                    className="FormField__Checkbox"
+                    type="checkbox"
+                    name="hasAgreed"
+                    value={this.state.hasAgreed}
+                    onChange={this.handleChange}
+                  />{" "}
+                  I agree all statements in{" "}
+                  <a href="www.google.com" className="FormField__TermsLink">
+                    terms of service
+                  </a>
+                </label>
+              </article>
+
+              <article className="FormField">
+                <button className="FormField__Button mr-20">Sign Up</button>
+              </article>
+            </form>
+          </section>
+        </Animated>
       </div>
     )
   }
