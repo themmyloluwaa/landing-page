@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import "../styles/Header.css"
 
@@ -10,15 +10,17 @@ const Header = () => {
         <StaticQuery
           query={query}
           render={data => (
-            <Img
-              fixed={data.file.childImageSharp.fixed}
-              className="header-img"
-            />
+            <Link to="/">
+              <Img
+                fixed={data.file.childImageSharp.fixed}
+                className="header-img"
+              />
+            </Link>
           )}
         />
         <ul>
           <li>
-            <a href="#">REGISTER</a>
+            <Link to="/Register">REGISTER</Link>
           </li>
         </ul>
       </nav>
@@ -27,7 +29,7 @@ const Header = () => {
 }
 export const query = graphql`
   query {
-    file(relativePath: { eq: "JornyMan A.png" }) {
+    file(relativePath: { eq: "Jornyman.png" }) {
       childImageSharp {
         fixed(width: 60, height: 60) {
           ...GatsbyImageSharpFixed
